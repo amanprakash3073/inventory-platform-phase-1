@@ -84,7 +84,7 @@ The current demo uses one broker and one partition per topic. Its seven-day rete
 **Important:** This is a proposed runbook. It must be tested and adapted before operational use.
 
 
-## 9. Kappa Architecture Checklist
+## 8. Kappa Architecture Checklist
 
 - [ ] Configure and verify seven-day Kafka retention.
 - [ ] Estimate storage using measured event volume and size.
@@ -93,6 +93,6 @@ The current demo uses one broker and one partition per topic. Its seven-day rete
 - [ ] Add event IDs and idempotent processing.
 - [ ] Test processor restart and recovery.
 
-## 10. Conclusion
+## 9. Conclusion
 
 The current project demonstrates the basic streaming path for inventory analytics. The improvements above are proposed reliability requirements, not claims that the current demo already implements them.
