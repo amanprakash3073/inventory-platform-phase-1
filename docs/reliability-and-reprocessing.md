@@ -83,13 +83,6 @@ The current demo uses one broker and one partition per topic. Its seven-day rete
 
 **Important:** This is a proposed runbook. It must be tested and adapted before operational use.
 
-## 8. Lambda Architecture Checklist
-
-- [ ] Define durable raw-event storage, such as Amazon S3.
-- [ ] Design reconciliation between batch results and streaming results.
-- [ ] Reuse consistent business logic across batch and streaming calculations.
-- [ ] Define a merge strategy that prevents double counting.
-- [ ] Test recovery after streaming failures.
 
 ## 9. Kappa Architecture Checklist
 
