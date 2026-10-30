@@ -58,15 +58,13 @@ Estimate storage using:
 
 **Required raw storage ≈ average event rate × average event size × 604,800 seconds**
 
-Then add overhead for replication, indexes or metadata, operational headroom, and any compression assumptions.
+Estimate for this project (illustrative, not measured)
 
-For example, at 100 events/second and 1 KB/event:
-
-100 × 1 KB × 604,800 = approximately 604.8 GB of uncompressed event payload over seven days.
-
-This is an illustrative estimate, not a measurement of the current project. Actual sizing must use measured event sizes, event rates, and the configured replication factor.
-
-The current demo uses one broker and one partition per topic. Its seven-day retention requirement has not yet been verified.
+The event rate is about 30 events/second, estimated from the generator code. Roughly 15 are stock updates, 6 to 8 are sales, and replenishments are rare.
+The event size is assumed to be about 100 bytes of JSON per event.
+30 x 100 bytes x 604,800 seconds = about 1.4 GB over seven days.
+With replication factor 1, per-record overhead and 2x headroom, plan for roughly 3 GB.
+Demand changes the estimate. Sales events rise with DEMAND_MULTIPLIER, but stock updates stay constant.
 
 ## 7. Reprocessing Runbook — Proposed
 
