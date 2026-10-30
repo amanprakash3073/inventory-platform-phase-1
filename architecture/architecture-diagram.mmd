@@ -1,0 +1,9 @@
+
+flowchart LR
+    A["Python Event Generator"] -->|Events| B["Apache Kafka"]
+    B -->|Consume events| C["Python Stream Processor"]
+    C -->|Store processed data| D[("PostgreSQL Database")]
+    D -->|Query data| E["Grafana Dashboard"]
+
+    A -.-> F["Event Data"]
+    C -.-> G["Processing and Error Logs"]
